@@ -1,0 +1,9 @@
+- name: Main Task | Installing and Configuring GitLab CE on RHEL/CentOS
+  hosts: gitlab-server
+  become: yes
+  vars_files:
+    - defaults/main.yml
+    - vars/RedHat.yml
+  remote_user: ec2-user
+  tasks:
+    - include: tasks/main.yml
